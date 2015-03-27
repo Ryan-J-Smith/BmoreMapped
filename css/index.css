@@ -1,0 +1,33 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 0px;
+}
+
+.jumbotron {
+padding-top: 50px;
+}
+
+#map {
+	position: relative;
+	top: 20px;
+	bottom: 20px;
+	height: 650px;
+	width: 100%;
+	max-width: none;
+	min-width: 0px;
+}
+
+.navbar {
+	display: inline-block;
+	float: none;
+  	margin-bottom: 20px;
+  	text-align: center;
+}
+
+.equal {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
