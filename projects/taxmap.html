@@ -12,12 +12,13 @@
 
     <title>Baltimore Mapped</title>
 
+   <!-- Mapbox script -->
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
-
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,17 +41,23 @@
       
       <div class="row">
         <div class = "col-md-12">
-        <script src="/js/districtMap.js"></script>
+          <div id='map'></div>
         </div>
       </div>
 
+      <hr>
+      <footer>
+        <p>&copy; Ryan J. Smith 2015</p>
+      </footer>
+
     </div>
 
+    <script type="text/javascript" src="../js/taxmap.js"></script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
