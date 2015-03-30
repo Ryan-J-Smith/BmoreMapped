@@ -8,6 +8,10 @@ body {
 padding-top: 50px;
 }
 
+.panel-body {
+	height: 100px;
+}
+
 #map {
 	position: relative;
 	top: 20px;
