@@ -35,3 +35,45 @@ padding-top: 50px;
   display: -ms-flexbox;
   display:         flex;
 }
+
+#map-canvas{
+	position: relative;
+	top: 20px;
+	height: 700px;
+	width: 100%;
+}
+
+#legend {
+background: #FFF;
+padding: 10px;
+margin: 5px;
+font-size: 12px;
+font-family: Arial, sans-serif;
+}
+
+.color {
+border: 1px solid;
+height: 12px;
+width: 12px;
+margin-right: 3px;
+float: left;
+}
+.red {
+background: #C00;
+}
+
+.yellow {
+background: #FF3;
+}
+
+.green {
+background: #6F0;
+}
+
+.blue {
+background: #06C;
+}
+
+.purple {
+background: #63C;
+}
