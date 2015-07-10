@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Baltimore Mapped</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../css/dc.css">
+
+    <style>
+      #chart-crime-type g.row text {fill: black;}
+    </style>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index.html">BmoreMapped.com</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Baltimore Crime Explorer</h1>
+            <p class="lead">Visualizing crime across multiple dimensions in Baltimore</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Per capita crime by neighborhood:</h3>
+                <br>
+                <div id = "chart-crime-choropleth"></div>
+            </div>
+            <div class="col-md-4">
+                <h3>Total crime by type:</h3>
+                <br>
+                <div id = "chart-crime-type"></div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <h3>Crime volume by date:</h3>
+                <br>
+                <div id = "chart-crime-volume"></div>
+            </div>
+        </div>
+
+      <hr>
+      <footer>
+        <p>&copy; Ryan J. Smith 2015</p>
+      </footer>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/crossfilter.min.js"></script>
+    <script src="../js/d3.min.js"></script>
+    <script src="../js/dc.min.js"></script>
+    <script type="text/javascript" src="../js/crimeExplorer.js"></script>
+
+  </body>
+</html>
