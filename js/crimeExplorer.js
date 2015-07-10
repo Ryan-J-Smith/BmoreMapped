@@ -12,7 +12,6 @@ var hoodDict;
 var crimeDict;
 var hoodPop;
 var hoodDemoDict = {};
-var mapData;
 
 var mapChart = dc.geoChoroplethChart("#chart-crime-choropleth");
 var dateCountChart = dc.barChart("#chart-crime-volume");
@@ -144,7 +143,7 @@ d3.csv(dataFile, function(csvError, csvData) {
             .colorDomain([0, 1.5])
             .overlayGeoJson(geojson.features, "neighborhood", function(d) {
                 return d.properties.Name; });
-            
+
             dc.renderAll();
     });
 
