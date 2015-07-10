@@ -113,19 +113,20 @@ d3.csv(dataFile, function(csvError, csvData) {
             .group(monthCounts)
             .x(d3.time.scale().domain([minDate,maxDate]))
             .xUnits(d3.time.months)
+            .margins({top: 50, bottom: 50, right: 50, left: 50})
             .elasticY(true);
 
         crimeTypeChart
-            .width(300)
-            .height(400)
+            .width(500)
+            .height(500)
             .dimension(crimeTypeDim)
             .group(crimeTypeGroup)
             .renderLabel(true)
             .elasticX(true);
 
-        var scaleVal = 125000,
-            ctrLat = 39.25,
-            ctrLon = 76.57;
+        var scaleVal = 140000,
+            ctrLat = 39.279,
+            ctrLon = 76.5;
 
         var mapProjection = d3.geo.albers()
             .rotate([ctrLon,0])
@@ -135,15 +136,15 @@ d3.csv(dataFile, function(csvError, csvData) {
         mapChart
             .dimension(neighborhoodDim)
             .group(neighborhoodGroup)
-            .width(700)
-            .height(400)
+            .width(500)
+            .height(500)
             // .transitionDuration(1000)
             .projection(mapProjection)
             .colors(d3.scale.quantize().range(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#0061B5"]))
             .colorDomain([0, 1.5])
             .overlayGeoJson(geojson.features, "neighborhood", function(d) {
                 return d.properties.Name; });
-
+            
             dc.renderAll();
     });
 
