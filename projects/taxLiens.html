@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Baltimore Tax Lien Data</title>
+
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
+<script src="../js/d3.min.js"></script>
+<script src="../js/c3.min.js"></script>
+
+<body>
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>Baltimore Tax Lien Auctions 2013</h1>
+            <p class="lead">Investigating properties in Baltimore's annual tax lien sale</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Types of property in auction:</h3>
+                <div id="propertyTypeChart"></div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Types of properties with purchased liens:</h3>
+                <div id="typeGivenBoughtChart"></div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+
+    </div>
+
+    <script src="../js/taxLienGraphs.js"></script>
+
+</body>
