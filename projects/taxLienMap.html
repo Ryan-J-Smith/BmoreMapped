@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Baltimore Mapped</title>
+
+   <!-- Mapbox script -->
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index.html">BmoreMapped.com</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      
+      <div class="row">
+        <div class = "col-md-12">
+          <h2>Baltimore City Tax Lien Auction 2015</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class = "col-md-12">
+          <div id='map'></div>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="row">
+        <div class = "col-md-12">
+          <h3>Description:</h3>
+
+          <p>This map depicts properties that were associated with tax lien certificates available for purchase during the 2013 Baltimore City sale of tax certificates.  Briefly, properties that were associated with unpaid taxes or utility bills had lien certificates issued against them.  These certificiates were then placed in an auction where investors could place bids on them.  Investors who won the certificate pay the city the owed monies and receive the right to collect payment from the individual associated with the lien.  Repayment comes with an 18% interest rate.</p>
+
+          <p>In the event the certificate is not redeemed within 12 months, the holder of the certificate may begin foreclosure proceedings against the property. As a result, the location and value of the property associated with the lien is taken into serious consideration when investors are bidding on the property. This map is meant to show both the general location of properties involved in the auction as well as to investigate whether investors consider the location of the property when considering whether or not to place a bid on a certificate.</p>
+
+          <p>Data regarding auction outcomes was downloaded from <a href="http://www.bidbaltimore.com"> Bid Baltimore</a>. Geographic data regarding property locations was gathered from the <a href="http://gisdata.baltimorecity.gov/">Baltimore City Open GIS Data Portal</a>. Data from the two datasets were merged in Python with the help of the Pandas and Geopandas packages. The map only depicts properties with certificates that had block and lot numbers that matched the corresponding entry in the geographic data file. Additionally, results were filtered to only show properties that were zoned for residential use.</p>
+
+        </div>
+      </div>
+
+      <hr>
+      <footer>
+        <p>&copy; <a href="http://ryanjsmith.me"> Ryan J. Smith </a> 2015 </p>
+      </footer>
+
+    </div>
+
+    <script>
+      L.mapbox.accessToken = 'pk.eyJ1IjoicnlhbmpzbWl0aCIsImEiOiJGdUZ1VllrIn0.3CnpoqP4UtaQPRHvEzssgA';
+      // Construct a bounding box for this map that the user cannot move out of
+      var southWest = L.latLng(39.196, -76.728),
+          northEast = L.latLng(39.379, -76.525),
+          bounds = L.latLngBounds(southWest, northEast);
+
+      var map = L.mapbox.map('map', 'ryanjsmith.taxLiensBids2015', {
+          // set that bounding box as maxBounds to restrict moving the map
+          // see full maxBounds documentation:
+          // http://leafletjs.com/reference.html#map-maxbounds
+          maxBounds: bounds,
+          maxZoom: 17,
+          minZoom: 12
+      });
+
+
+      var propLayer = L.mapbox.tileLayer('ryanjsmith.ljg2ba60');
+      propLayer.addTo(map);
+      propLayer.setZIndex(-1);
+      // zoom the map to that bounding box
+      map.fitBounds(bounds);
+
+      // Add optional fullscreen zoom
+      L.control.fullscreen().addTo(map);
+
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>
