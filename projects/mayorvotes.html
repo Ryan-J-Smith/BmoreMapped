@@ -17,8 +17,8 @@
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/index.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -41,13 +41,34 @@
       
       <div class="row">
         <div class = "col-md-12">
+          <h2>Baltimore 2011 Mayoral Election Pseudo Dot Map</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class = "col-md-12">
           <div id='map'></div>
+        </div>
+      </div>
+
+      <br><br>
+
+      <div class="row">
+        <div class = "col-md-12">
+          <h3>Description:</h3>
+
+      <p>This map was created as an experiment in working with pseudo dot maps. Results from <a href="http://archive.baltimorecity.gov/Government/BoardsandCommissions/ElectionsBoard/PastElectionResults.aspx">past elections</a> are provided by the City of Baltimore. At a glance, the information contained in these records is not exceedingly useful. The data is contained within a collection of PDF documents and consists of votes counted for each candidate within each jurisdiction. This format is unfortunately not particularly useful for anything other than record keeping.</p>
+
+      <p>In an attempt to visualize the data, I extracted the data from the PDFs using <a href="http://tabula.technology/">Tabula</a> and combined the vote counts with voting precinct geometry provided through <a href="https://data.baltimorecity.gov">Baltimore's Open Data website</a>. At this point I had enough data to generate a nice <a href="https://en.wikipedia.org/wiki/Choropleth_map">choropleth map</a> of voter activity.  However, inspired by the <a href="http://www.coopercenter.org/demographics/Racial-Dot-Map">racial dot map</a>, I thought I would try displaying the data in a different format.</p>
+
+      <p>Using <a href="http://www.qgis.org/en/site/">QGIS</a> open geographic information system software, I set about to produce a pseudo dot map. Essentially, within each precinct, a dot was placed randomly for each tallied vote. This approach represents the data in a more literal and explicit format than a choropleth would.  Additionally, artificial jurisdictional boundaries become blurred and geographical patterns of voter preference are more readily apparent.</p>
+
         </div>
       </div>
 
       <hr>
       <footer>
-        <p>&copy; Ryan J. Smith 2015</p>
+        <p>&copy; <a href="http://ryanjsmith.me"> Ryan J. Smith </a> 2015 </p>
       </footer>
 
     </div>
